@@ -1,2 +1,4 @@
 # ESP32
-Códigos para ESP32
+Projetos para ESP32:
+
+* Acelerometro com interface de web
