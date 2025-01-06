@@ -1,3 +1,8 @@
+![ESP32 Badge](https://img.shields.io/badge/ESP32-IDE-orange)
+![WiFi Badge](https://img.shields.io/badge/Wi--Fi-SSID-green)
+![SPIFFS Badge](https://img.shields.io/badge/SPIFFS-FileSystem-blue)
+![Arduino Badge](https://img.shields.io/badge/Arduino-IDE-red)
+
 # ESP32 MPU6050 Web Server
 
 Este projeto utiliza o **ESP32** com o sensor **MPU6050** para coletar dados de giroscópio, acelerômetro e temperatura, e os exibe em tempo real em uma página web. O servidor web é acessado via **Wi-Fi** e os dados do sensor são enviados para a página web utilizando **Server-Sent Events (SSE)**.
@@ -111,9 +116,4 @@ Com o sistema **SPIFFS** habilitado, é possível armazenar arquivos dentro do E
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
-## Badges
 
-![ESP32 Badge](https://img.shields.io/badge/ESP32-IDE-orange)
-![WiFi Badge](https://img.shields.io/badge/Wi--Fi-SSID-green)
-![SPIFFS Badge](https://img.shields.io/badge/SPIFFS-FileSystem-blue)
-![Arduino Badge](https://img.shields.io/badge/Arduino-IDE-red)
