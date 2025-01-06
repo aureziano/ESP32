@@ -54,23 +54,44 @@ Na página web, você poderá visualizar os dados de giroscópio, acelerômetro 
 
 ## Funcionalidades
 
-- **Sensor de Giroscópio (Gyro)**: Coleta e exibe as leituras dos eixos X, Y, Z.
-- **Acelerômetro (Accelerometer)**: Coleta e exibe as leituras dos eixos X, Y, Z.
-- **Temperatura (Temperature)**: Exibe a temperatura do sensor MPU6050.
-- **Resetar Leituras**: Você pode resetar individualmente as leituras dos eixos do giroscópio (`/resetX`, `/resetY`, `/resetZ`) ou todas as leituras com o comando `/reset`.
+### Sensor de Giroscópio (Gyro)
+
+- Coleta e exibe as leituras dos eixos X, Y, Z.
+
+### Acelerômetro (Accelerometer)
+
+- Coleta e exibe as leituras dos eixos X, Y, Z.
+
+### Temperatura (Temperature)
+
+- Exibe a temperatura do sensor MPU6050.
+
+### Resetar Leituras
+
+- **/reset**: Reseta todas as leituras dos sensores (giroscópio, acelerômetro, temperatura).
+- **/resetX**: Reseta a leitura do eixo X do giroscópio.
+- **/resetY**: Reseta a leitura do eixo Y do giroscópio.
+- **/resetZ**: Reseta a leitura do eixo Z do giroscópio.
+
+## OTA (Over-the-Air) - Implantação Remota do Código
+
+### OTA_1 - Implantação de Código com Acesso Local
+
+Você pode enviar o firmware diretamente para o ESP32 usando **OTA (Over-the-Air)**. O código é implantado acessando a página `/upload`, onde você pode enviar o novo firmware. Para realizar isso, é necessário conhecer o IP do ESP32, que pode ser visualizado no monitor serial.
+
+### OTA_2 - Controle de LED pela Página Web
+
+Foi implementado um controle de LED através da página web. Você pode controlar o LED do ESP32 diretamente da interface web acessando o caminho `/led`. 
+
+### OTA_3 - Implantação de FileSystem (SPIFFS)
+
+Com o sistema **SPIFFS** habilitado, é possível armazenar arquivos dentro do ESP32. No projeto, isso é utilizado para armazenar páginas web e outros arquivos. Dessa forma, você pode adicionar ou modificar os arquivos diretamente no ESP32 através do comando `/upload`.
 
 ## Como Funciona
 
 1. O ESP32 coleta os dados do sensor MPU6050 a cada intervalo de tempo e os envia para o servidor web via **Server-Sent Events**.
 2. O servidor web serve os dados do sensor em tempo real no formato JSON para o navegador.
 3. A página HTML recebe e exibe os dados de giroscópio, acelerômetro e temperatura ao vivo.
-
-## Funcionalidades de Resets
-
-- **/reset**: Reseta todas as leituras dos sensores (giroscópio, acelerômetro, temperatura).
-- **/resetX**: Reseta a leitura do eixo X do giroscópio.
-- **/resetY**: Reseta a leitura do eixo Y do giroscópio.
-- **/resetZ**: Reseta a leitura do eixo Z do giroscópio.
 
 ## Estrutura do Projeto
 
@@ -90,3 +111,9 @@ Na página web, você poderá visualizar os dados de giroscópio, acelerômetro 
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
+## Badges
+
+![ESP32 Badge](https://img.shields.io/badge/ESP32-IDE-orange)
+![WiFi Badge](https://img.shields.io/badge/Wi--Fi-SSID-green)
+![SPIFFS Badge](https://img.shields.io/badge/SPIFFS-FileSystem-blue)
+![Arduino Badge](https://img.shields.io/badge/Arduino-IDE-red)
